@@ -16,5 +16,7 @@
   networking.hostName = "mechrevo";
   networking.networkmanager.enable = true;
 
+  services.flatpak.enable = true;
+
   system.stateVersion = "${myvars.stateVersion}";
 }
