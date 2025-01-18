@@ -42,6 +42,16 @@
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
           inputs.daeuniverse.nixosModules.daed
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.flake-inputs = inputs;
+            home-manager.extraSpecialArgs = {
+              inherit myvars;
+            };
+            home-manager.users.aaron = import ./modules/home;
+          }
         ];
       };
     };
