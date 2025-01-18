@@ -4,8 +4,7 @@
   pkgs,
   modulesPath,
   ...
-}:
-{
+}: {
   imports = [
     ./disko-config.nix
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -38,11 +37,11 @@
         "usbhid"
         "sd_mod"
       ];
-      kernelModules = [ ];
+      kernelModules = [];
     };
 
-    kernelModules = [ "kvm-amd" ];
-    extraModulePackages = [ ];
+    kernelModules = ["kvm-amd"];
+    extraModulePackages = [];
 
     tmp = {
       # Clear /tmp on boot to get a stateless /tmp directory.
