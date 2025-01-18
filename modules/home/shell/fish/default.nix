@@ -11,5 +11,8 @@
       # Disable the greeting message.
       set fish_greeting
     '';
+    programs.fish.interactiveShellInit = ''
+      starship init fish | source
+    '';
   };
 }
