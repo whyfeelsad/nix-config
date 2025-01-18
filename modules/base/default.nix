@@ -1,5 +1,6 @@
 {lib, ...}: {
   imports = [
+    ./bluetooth.nix
     ./i18n.nix
     ./nix.nix
     ./pkgs.nix
