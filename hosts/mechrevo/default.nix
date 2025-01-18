@@ -11,6 +11,7 @@
     ./impermanence.nix
 
     ../../modules/nixos/base
+    ../../modules/nixos/desktop
   ];
 
   networking.hostName = "mechrevo";
