@@ -30,6 +30,47 @@
     hdparm
     dmidecode
     parted
+
+    # core tools
+    fastfetch
+    neovim
+    just
+    git
+    git-lfs
+
+    # archives
+    zip
+    xz
+    zstd
+    unzipNLS
+    p7zip
+
+    # Text Processing
+    # Docs: https://github.com/learnbyexample/Command-line-text-processing
+    gnugrep
+    gnused
+    gawk
+    jq
+
+    # networking tools
+    mtr
+    iperf3
+    dnsutils
+    ldns
+    wget
+    curl
+    aria2
+    socat
+    nmap
+    ipcalc
+
+    # misc
+    file
+    findutils
+    which
+    tree
+    gnutar
+    rsync
   ];
 
   # BCC - Tools for BPF-based Linux IO analysis, networking, monitoring, and more
