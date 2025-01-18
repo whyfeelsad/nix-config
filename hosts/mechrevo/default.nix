@@ -9,14 +9,12 @@
     ./zram.nix
     ./hardware.nix
     ./impermanence.nix
+
+    ../../modules/nixos/base
   ];
 
   networking.hostName = "mechrevo";
   networking.networkmanager.enable = true;
-
-  time.timeZone = "${myvars.defaultTimeZone}";
-
-  i18n.defaultLocale = "en_US.UTF-8";
 
   services.openssh = {
     enable = true;
