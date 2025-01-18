@@ -54,6 +54,7 @@
 
   environment.systemPackages = [
     pkgs.git
+    pkgs.just
   ];
 
   system.stateVersion = "${myvars.stateVersion}";
