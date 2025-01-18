@@ -5,5 +5,6 @@
     ./kitty
     ./niri
     ./swaylock
+    ./waybar
   ];
 }
