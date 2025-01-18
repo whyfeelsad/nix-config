@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./disko-config.nix
+    ./zram.nix
     ./hardware-configuration.nix
 
     ../../modules/base
