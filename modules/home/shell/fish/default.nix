@@ -7,8 +7,9 @@
       ls = "ls --color=auto";
       grep = "grep --color=auto";
     };
-    shellInit = ''
-      starship init fish | source
+    interactiveShellInit = ''
+      # Disable the greeting message.
+      set fish_greeting
     '';
   };
 }
