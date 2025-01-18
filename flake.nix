@@ -38,7 +38,7 @@
           inherit myvars;
         };
         modules = [
-          ./hosts/mechrevo/configuration.nix
+          ./hosts/mechrevo
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
           inputs.daeuniverse.nixosModules.daed
