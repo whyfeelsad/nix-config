@@ -11,6 +11,8 @@
 
     ../../modules/base
     ../../modules/impermanence
+
+    ../../modules/desktop
   ];
 
   networking.hostName = "mechrevo";
