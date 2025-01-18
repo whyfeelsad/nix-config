@@ -37,6 +37,7 @@
     just
     git
     git-lfs
+    lazygit
 
     # archives
     zip

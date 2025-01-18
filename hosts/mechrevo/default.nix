@@ -17,10 +17,5 @@
   networking.hostName = "mechrevo";
   networking.networkmanager.enable = true;
 
-  environment.systemPackages = [
-    pkgs.git
-    pkgs.just
-  ];
-
   system.stateVersion = "${myvars.stateVersion}";
 }
