@@ -52,5 +52,9 @@
     };
   };
 
+  environment.systemPackages = [
+    pkgs.git
+  ];
+
   system.stateVersion = "${myvars.stateVersion}";
 }
