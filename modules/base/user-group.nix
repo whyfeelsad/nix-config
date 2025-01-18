@@ -21,6 +21,8 @@
       openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
       home = "/home/${myvars.userName}";
       isNormalUser = true;
+      shell = pkgs.fish;
+      packages = with pkgs; [fish];
       extraGroups = [
         myvars.userName
         "users"

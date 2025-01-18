@@ -1,5 +1,4 @@
-{ myvars, ... }:
-{
+{myvars, ...}: {
   environment.persistence."/persistent" = {
     hideMounts = true;
     directories = [
@@ -10,7 +9,7 @@
       "/var/log"
       "/var/lib"
     ];
-    files = [ ];
+    files = [];
 
     users."${myvars.userName}" = {
       directories = [
@@ -33,10 +32,10 @@
           mode = "0700";
         }
 
-        ".config/zsh"
         ".local/share/flatpak"
         ".var/app"
         ".config/fcitx5"
+        ".config/fish"
 
         ".npm"
         ".java"
@@ -49,7 +48,7 @@
         # Vscode
         ".config/Code"
       ];
-      files = [ ];
+      files = [];
     };
   };
 }

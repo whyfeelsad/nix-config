@@ -10,6 +10,7 @@
     flake-inputs.nix-flatpak.homeManagerModules.nix-flatpak
 
     ./programs
+    ./shell
   ];
 
   home = {
