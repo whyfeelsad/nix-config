@@ -2,10 +2,10 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      ll = "ls -l --color=auto";
-      la = "ls -la --color=auto";
-      ls = "ls --color=auto";
-      grep = "grep --color=auto";
+      ls = "eza";
+      ll = "eza -l --time-style long-iso";
+      la = "eza -la --time-style long-iso";
+      tree = "eza --tree";
     };
     interactiveShellInit = ''
       # Disable the greeting message.
