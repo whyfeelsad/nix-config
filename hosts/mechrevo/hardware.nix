@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./disko-config.nix
+    ./disko.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
