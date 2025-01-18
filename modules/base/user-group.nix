@@ -4,13 +4,13 @@
   lib,
   myvars,
   ...
-}:
-{
+}: {
+  # Don't allow mutation of users outside the config.
   users.mutableUsers = false;
 
   users.groups = {
-    "${myvars.userName}" = { };
-    docker = { };
+    "${myvars.userName}" = {};
+    docker = {};
   };
 
   users.users = {
@@ -21,7 +21,6 @@
       openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
       home = "/home/${myvars.userName}";
       isNormalUser = true;
-      shell = pkgs.zsh;
       extraGroups = [
         myvars.userName
         "users"
@@ -37,6 +36,4 @@
       openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
     };
   };
-
-  environment.pathsToLink = [ "/share/zsh" ];
 }
