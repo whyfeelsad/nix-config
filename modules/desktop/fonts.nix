@@ -4,7 +4,7 @@
     pname = "MapleMono-NF-CN";
     src = pkgs.fetchurl {
       url = "https://github.com/subframe7536/Maple-font/releases/download/v${version}/${pname}.zip";
-      sha256 = "sha256-jbULR1aTKuEBLxW9xYmP6MuImxEf/6ZnxyD2ar8J9Wo=";
+      sha256 = "sha256-ihoTx2Ms2k9DEJ2F0veBAJOYKmVKRNOeMLvv6+fNE4o=";
     };
   });
 
