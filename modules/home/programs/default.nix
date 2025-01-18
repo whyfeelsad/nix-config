@@ -3,5 +3,6 @@
     ./flatpak
     ./git
     ./kitty
+    ./niri
   ];
 }
