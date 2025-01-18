@@ -18,6 +18,7 @@
       openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
       home = "/home/${myvars.userName}";
       isNormalUser = true;
+      shell = pkgs.fish;
       extraGroups = [
         myvars.userName
         "users"
@@ -28,10 +29,12 @@
       ];
     };
   };
-  
+
   # root's ssh key are mainly used for remote deployment
   users.users.root = {
     initialHashedPassword = myvars.initialHashedPassword;
     openssh.authorizedKeys.keys = myvars.sshAuthorizedKeys;
   };
+
+  programs.fish.enable = true;
 }

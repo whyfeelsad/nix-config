@@ -10,12 +10,18 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     nixpkgs,
     disko,
     impermanence,
+    home-manager,
     ...
   }: let
     myvars = import ./vars;
@@ -30,6 +36,16 @@
           ./hosts/mechrevo
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs.flake-inputs = inputs;
+            home-manager.extraSpecialArgs = {
+              inherit myvars;
+            };
+            home-manager.users.aaron = import ./modules/home;
+          }
         ];
       };
     };
