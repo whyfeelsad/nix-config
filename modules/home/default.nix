@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./cli
+    ./gui
     ./desktop/windowmanager/niri
   ];
 
