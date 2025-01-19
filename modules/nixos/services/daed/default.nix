@@ -1,12 +1,4 @@
-{
-  pkgs,
-  flake-inputs,
-  ...
-}: {
-  imports = [
-    flake-inputs.inputs.daeuniverse.nixosModules.daed
-  ];
-
+{pkgs, ...}: {
   services.daed = {
     enable = true;
     openFirewall = {

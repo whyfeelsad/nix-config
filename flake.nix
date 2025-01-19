@@ -39,6 +39,7 @@
           ./hosts/mechrevo
           disko.nixosModules.disko
           impermanence.nixosModules.impermanence
+          inputs.daeuniverse.nixosModules.daed
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
