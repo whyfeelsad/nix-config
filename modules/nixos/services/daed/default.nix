@@ -3,7 +3,7 @@
   flake-inputs,
   ...
 }: {
-  import = [
+  imports = [
     flake-inputs.inputs.daeuniverse.nixosModules.daed
   ];
 
