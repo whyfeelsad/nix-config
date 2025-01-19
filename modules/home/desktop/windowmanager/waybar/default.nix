@@ -47,8 +47,8 @@
         cpu = {
           interval = 5;
           tooltip = false;
-          format = " {usage}%";
-          format-alt = " {load}";
+          format = " {usage}%";
+          format-alt = " {load}";
           on-click = lib.getExe pkgs.resources;
 
           states = {
@@ -60,8 +60,8 @@
         # Memory usage
         memory = {
           interval = 5;
-          format = " {percentage}%";
-          tooltip = " {used:0.1f}G/{total:0.1f}G";
+          format = " {percentage}%";
+          tooltip = " {used:0.1f}G/{total:0.1f}G";
 
           states = {
             warning = 70;
