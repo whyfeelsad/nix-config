@@ -38,8 +38,10 @@ input {
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-// output "eDP-1" {
-// }
+output "eDP-1" {
+    mode "2880x1880@120.000"
+    scale 2.0
+}
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
