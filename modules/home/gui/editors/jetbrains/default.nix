@@ -11,6 +11,7 @@
     --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 
     -javaagent:${jetbra}/ja-netfilter.jar=jetbrains
+    -Dawt.toolkit.name=WLToolkit
   '';
 in {
   home.packages = with pkgs; [
