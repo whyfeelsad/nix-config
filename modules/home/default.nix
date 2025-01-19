@@ -8,6 +8,7 @@
   imports = [
     ./cli
     ./gui
+    ./desktop/displaymanager/hyprlock
     ./desktop/windowmanager/niri
   ];
 
