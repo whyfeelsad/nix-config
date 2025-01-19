@@ -2,149 +2,151 @@
   programs.waybar = {
     enable = true;
     package = pkgs.waybar;
-    settings = {
-      layer = "top";
-      position = "top";
-      modules-left = [
-        "custom/nixlogo"
-        "niri/workspaces"
-        "cpu"
-        "memory"
-      ];
-      modules-center = ["clock"];
-      modules-right = [
-        "tray"
-        "network"
-        "bluetooth"
-        "backlight"
-        "pulseaudio"
-        "battery"
-      ];
+    settings = [
+      {
+        layer = "top";
+        position = "top";
+        modules-left = [
+          "custom/nixlogo"
+          "niri/workspaces"
+          "cpu"
+          "memory"
+        ];
+        modules-center = ["clock"];
+        modules-right = [
+          "tray"
+          "network"
+          "bluetooth"
+          "backlight"
+          "pulseaudio"
+          "battery"
+        ];
 
-      # Logo
-      "custom/nixlogo" = {
-        format = "";
-        tooltip = false;
-        # on-click = "${pkgs.wofi}/bin/wofi --show drun";
-      };
-
-      # Workspaces
-      "niri/workspaces" = {};
-
-      # Cpu usage
-      cpu = {
-        interval = 5;
-        tooltip = false;
-        format = " {usage}%";
-        format-alt = " {load}";
-
-        states = {
-          warning = 70;
-          critical = 90;
+        # Logo
+        "custom/nixlogo" = {
+          format = "";
+          tooltip = false;
+          # on-click = "${pkgs.wofi}/bin/wofi --show drun";
         };
-      };
 
-      # Memory usage
-      memory = {
-        interval = 5;
-        format = " {percentage}%";
-        tooltip = " {used:0.1f}G/{total:0.1f}G";
+        # Workspaces
+        "niri/workspaces" = {};
 
-        states = {
-          warning = 70;
-          critical = 90;
-        };
-      };
+        # Cpu usage
+        cpu = {
+          interval = 5;
+          tooltip = false;
+          format = " {usage}%";
+          format-alt = " {load}";
 
-      # Clock & Calendar
-      clock = {
-        format = "  {:%m/%d %I:%M %p}";
-        format-alt = "  {:%a, %d %b %Y}";
-        tooltip-format = "<tt>{calendar}</tt>";
-        calendar = {
-          mode = "year";
-          mode-mon-col = 3;
-          weeks-pos = "right";
-          on-scroll = 1;
-          format = {
-            months = "<span color='#ffead3'><b>{}</b></span>";
-            days = "<span color='#ecc6d9'><b>{}</b></span>";
-            weeks = "<span color='#99ffdd'><b>W{}</b></span>";
-            weekdays = "<span color='#ffcc66'><b>{}</b></span>";
-            today = "<span color='#ff6699'><b><u>{}</u></b></span>";
-          };
-          actions = {
-            on-scroll-up = "shift_up";
-            on-scroll-down = "shift_down";
+          states = {
+            warning = 70;
+            critical = 90;
           };
         };
-      };
 
-      # Tray
-      tray = {
-        icon-size = 15;
-        spacing = 8;
-      };
+        # Memory usage
+        memory = {
+          interval = 5;
+          format = " {percentage}%";
+          tooltip = " {used:0.1f}G/{total:0.1f}G";
 
-      # Network
-      network = {
-        format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
-        format-wifi = "{icon}";
-        format-ethernet = "󰈀";
-        format-disconnected = "⚠";
-        tooltip-format-wifi = "WiFi: {essid} ({signalStrength}%)\n {bandwidthUpBytes}  {bandwidthDownBytes}";
-        tooltip-format-ethernet = "Ethernet: {ifname}\n {bandwidthUpBytes}  {bandwidthDownBytes}";
-        tooltip-format-disconnected = "Disconnected";
-        on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
-        interval = 5;
-      };
-
-      # Bluetooth
-      bluetooth = {
-        format = "󰂯";
-        format-disabled = "󰂲";
-        format-connected = "󰂱";
-        on-click = "blueberry";
-        interval = 5;
-      };
-
-      # Backlight
-      backlight = {
-        format-icons = ["" "" "" "" "" "" "" "" ""];
-        format = "<span color='#b4befe'>{icon}</span> {percent}%";
-        on-scroll-up = "brightnessctl set +1%";
-        on-scroll-down = "brightnessctl set -1%";
-      };
-
-      # Pulseaudio
-      pulseaudio = {
-        format = "<span color='#b4befe'>{icon}</span> {volume}%";
-        format-bluetooth = "󰂰";
-        tooltip-format = "Volume: {volume}%";
-        "format-muted" = "󰝟";
-        format-icons = {
-          default = ["󰖀" "󰕾" ""];
-          headphone = "";
-          headset = "";
-          hands-free = "";
+          states = {
+            warning = 70;
+            critical = 90;
+          };
         };
-        on-click = "pavucontrol";
-      };
 
-      # Battery
-      battery = {
-        format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
-        format = "<span color='#737373'>{icon}</span> {capacity}%";
-        format-charging = "<span color='#b2f252'>󰂄</span> {capacity}%";
-        format-plugged = "<span color='#b2f252'>󰚥</span> MAX";
-        interval = 5;
-        tooltip-format = "{timeTo}, {capacity}%\n {power} W";
-        states = {
-          warning = 30;
-          critical = 15;
+        # Clock & Calendar
+        clock = {
+          format = "  {:%m/%d %I:%M %p}";
+          format-alt = "  {:%a, %d %b %Y}";
+          tooltip-format = "<tt>{calendar}</tt>";
+          calendar = {
+            mode = "year";
+            mode-mon-col = 3;
+            weeks-pos = "right";
+            on-scroll = 1;
+            format = {
+              months = "<span color='#ffead3'><b>{}</b></span>";
+              days = "<span color='#ecc6d9'><b>{}</b></span>";
+              weeks = "<span color='#99ffdd'><b>W{}</b></span>";
+              weekdays = "<span color='#ffcc66'><b>{}</b></span>";
+              today = "<span color='#ff6699'><b><u>{}</u></b></span>";
+            };
+            actions = {
+              on-scroll-up = "shift_up";
+              on-scroll-down = "shift_down";
+            };
+          };
         };
-      };
-    };
+
+        # Tray
+        tray = {
+          icon-size = 15;
+          spacing = 8;
+        };
+
+        # Network
+        network = {
+          format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+          format-wifi = "{icon}";
+          format-ethernet = "󰈀";
+          format-disconnected = "⚠";
+          tooltip-format-wifi = "WiFi: {essid} ({signalStrength}%)\n {bandwidthUpBytes}  {bandwidthDownBytes}";
+          tooltip-format-ethernet = "Ethernet: {ifname}\n {bandwidthUpBytes}  {bandwidthDownBytes}";
+          tooltip-format-disconnected = "Disconnected";
+          on-click = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
+          interval = 5;
+        };
+
+        # Bluetooth
+        bluetooth = {
+          format = "󰂯";
+          format-disabled = "󰂲";
+          format-connected = "󰂱";
+          on-click = "blueberry";
+          interval = 5;
+        };
+
+        # Backlight
+        backlight = {
+          format-icons = ["" "" "" "" "" "" "" "" ""];
+          format = "<span color='#b4befe'>{icon}</span> {percent}%";
+          on-scroll-up = "brightnessctl set +1%";
+          on-scroll-down = "brightnessctl set -1%";
+        };
+
+        # Pulseaudio
+        pulseaudio = {
+          format = "<span color='#b4befe'>{icon}</span> {volume}%";
+          format-bluetooth = "󰂰";
+          tooltip-format = "Volume: {volume}%";
+          "format-muted" = "󰝟";
+          format-icons = {
+            default = ["󰖀" "󰕾" ""];
+            headphone = "";
+            headset = "";
+            hands-free = "";
+          };
+          on-click = "pavucontrol";
+        };
+
+        # Battery
+        battery = {
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+          format = "<span color='#737373'>{icon}</span> {capacity}%";
+          format-charging = "<span color='#b2f252'>󰂄</span> {capacity}%";
+          format-plugged = "<span color='#b2f252'>󰚥</span> MAX";
+          interval = 5;
+          tooltip-format = "{timeTo}, {capacity}%\n {power} W";
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+        };
+      }
+    ];
     style = ''
       @define-color bg #0d0d0d;
       @define-color darkgrey #131822;
