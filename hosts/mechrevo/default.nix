@@ -12,6 +12,8 @@
 
     ../../modules/nixos/base
     ../../modules/nixos/desktop
+
+    ../../modules/nixos/services/daed
   ];
 
   networking.hostName = "mechrevo";
