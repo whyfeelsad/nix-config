@@ -6,8 +6,7 @@
   ...
 }: {
   imports = [
-    ./programs
-    ./shell
+    ./cli
   ];
 
   home = {
