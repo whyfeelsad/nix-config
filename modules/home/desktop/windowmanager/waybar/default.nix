@@ -11,6 +11,7 @@
           "niri/workspaces"
           "cpu"
           "memory"
+          "custom/weather"
         ];
         modules-center = ["clock"];
         modules-right = [
@@ -27,6 +28,12 @@
           format = "";
           tooltip = false;
           # on-click = "${pkgs.wofi}/bin/wofi --show drun";
+        };
+
+        # Weather
+        "custom/weather" = {
+          exec = "curl 'https://wttr.in/BeiJing?format=1'";
+          interval = 3600;
         };
 
         # Workspaces
