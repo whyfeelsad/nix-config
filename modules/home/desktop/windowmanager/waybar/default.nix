@@ -155,7 +155,7 @@
       @define-color lightgrey #343a40;
       @define-color red #e30b44;
       @define-color white #f2efeb;
-      @define-color flake #d2fff3;
+      @define-color green #a7c080;
       @define-color icyblue #aad1ee;
       @define-color flakeicy #e5f0fa;
       @define-color avocado #c1d98f;
@@ -250,7 +250,7 @@
 
       #clock{
         font-family: JetBrainsMono Nerd Font;
-        background-color: @flake;
+        background-color: @green;
       }
 
       #custom-weather,
