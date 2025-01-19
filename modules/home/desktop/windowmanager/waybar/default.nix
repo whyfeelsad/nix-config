@@ -152,7 +152,9 @@
           format-charging = "<span color='#b2f252'>󰂄</span> {capacity}%";
           format-plugged = "<span color='#b2f252'>󰚥</span> MAX";
           interval = 5;
-          tooltip-format = "{timeTo}, {capacity}%\n {power} W";
+          tooltip-format = ''
+            {power}W
+            {timeTo}'';
           states = {
             warning = 30;
             critical = 15;
