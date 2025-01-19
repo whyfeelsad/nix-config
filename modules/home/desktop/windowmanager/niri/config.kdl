@@ -83,6 +83,7 @@ layout {
 // Add lines like this to spawn processes at startup.
 spawn-at-startup "waybar"
 spawn-at-startup "swaybg" "-m" "fill" "-i" "/home/aaron/Pictures/wallpaper/akshar-dave-BcvPlibJyo0-unsplash.jpg"
+spawn-at-startup "xwayland-satellite"
 
 // The path is formatted with strftime(3) to give you the screenshot date and time.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
