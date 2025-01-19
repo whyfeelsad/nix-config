@@ -6,7 +6,7 @@
 
       font = {
         name = "Maple Mono NF CN";
-        size = 15;
+        size = 10;
       };
 
       settings = {
