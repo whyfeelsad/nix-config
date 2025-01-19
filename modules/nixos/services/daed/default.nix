@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  import = [
+    flake-inputs.inputs.daeuniverse.nixosModules.daed
+  ];
+
   services.daed = {
     enable = true;
     openFirewall = {
