@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  flake-inputs,
+  ...
+}: {
   import = [
     flake-inputs.inputs.daeuniverse.nixosModules.daed
   ];
