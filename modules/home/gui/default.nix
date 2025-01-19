@@ -1,5 +1,6 @@
 {
   imports = [
-    ./kitty
+    ./editors
+    ./terminal
   ];
 }
