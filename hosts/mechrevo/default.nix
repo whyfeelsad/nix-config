@@ -14,6 +14,7 @@
     ../../modules/nixos/desktop
 
     ../../modules/nixos/services/daed
+    ../../modules/nixos/services/virt-manager
   ];
 
   networking.hostName = "mechrevo";
