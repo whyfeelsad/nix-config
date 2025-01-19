@@ -1,7 +1,7 @@
 {
   security = {
     pam.services = {
-      hyprlock = {
+      swaylock = {
         text = ''
           auth include login
         '';
