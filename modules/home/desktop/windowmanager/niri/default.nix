@@ -7,6 +7,7 @@
 
     materialgram
     firefox
+    remmina
 
     xfce.thunar
     xwayland-satellite
