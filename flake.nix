@@ -24,6 +24,7 @@
     disko,
     impermanence,
     home-manager,
+    daeuniverse,
     ...
   }: let
     myvars = import ./vars;
