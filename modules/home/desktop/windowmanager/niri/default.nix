@@ -7,6 +7,7 @@
 
     materialgram
     firefox
+    vscode
 
     xfce.thunar
     xwayland-satellite
