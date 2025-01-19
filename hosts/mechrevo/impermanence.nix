@@ -33,6 +33,7 @@
         }
 
         ".local/share/fish"
+        ".local/share/materialgram"
       ];
       files = [];
     };
