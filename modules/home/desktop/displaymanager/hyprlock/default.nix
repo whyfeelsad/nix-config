@@ -12,19 +12,18 @@
         {
           path = "/home/aaron/Pictures/wallpaper/akshar-dave-BcvPlibJyo0-unsplash.jpg";
           blur_passes = 3;
-          blur_size = 8;
+          blur_size = 4;
         }
       ];
-      image = [
+      label = [
         {
-          path = "/home/aaron/Pictures/wallpaper/akshar-dave-BcvPlibJyo0-unsplash.jpg";
-          size = 150;
-          border_size = 4;
-          border_color = "rgb(0C96F9)";
-          rounding = -1; # Negative means circle
-          position = "0, 200";
+          text = "$TIME";
+          color = "rgb(167, 192, 128)";
+          font_size = 90;
+          font_family = "Maple Mono NF";
+          position = "0, -150";
           halign = "center";
-          valign = "center";
+          valign = "top";
         }
       ];
       input-field = [
