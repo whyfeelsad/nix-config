@@ -36,8 +36,9 @@
         cpu = {
           interval = 5;
           tooltip = false;
-          format = " {usage}%";
-          format-alt = " {load}";
+          format = " {usage}%";
+          format-alt = " {load}";
+          on-click = lib.getExe pkgs.resources;
 
           states = {
             warning = 70;
@@ -113,8 +114,9 @@
         backlight = {
           format-icons = ["" "" "" "" "" "" "" "" ""];
           format = "<span color='#b4befe'>{icon}</span> {percent}%";
-          on-scroll-up = "brightnessctl set +1%";
-          on-scroll-down = "brightnessctl set -1%";
+          tooltip-format = "{icon} {percent}%";
+          on-scroll-up = "${lib.getExe pkgs.brightnessctl} set +1%";
+          on-scroll-down = "${lib.getExe pkgs.brightnessctl} set 1%-";
         };
 
         # Pulseaudio
