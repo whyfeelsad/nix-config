@@ -5,7 +5,7 @@
     settings = {
       clock = true;
       timestr = "%H:%M:%S";
-      datestr = "%Y-%d-%m";
+      datestr = "%Y-%m-%d";
       # screenshots = true;
       ignore-empty-password = true;
 
