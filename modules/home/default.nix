@@ -10,6 +10,7 @@
     ./gui
     ./desktop/displaymanager/swaylock
     ./desktop/windowmanager/niri
+    ./desktop/windowmanager/waybar
   ];
 
   home = {
