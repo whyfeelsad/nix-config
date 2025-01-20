@@ -39,7 +39,6 @@
 
         ".npm"
         ".java"
-        ".jdks"
 
         # JetBrains
         ".config/JetBrains"
