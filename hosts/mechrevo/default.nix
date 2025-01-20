@@ -18,6 +18,10 @@
     ../../modules/nixos/services/virt-manager
   ];
 
+  environment.systemPackages = [
+    pkgs.ddcutil
+  ];
+
   networking.hostName = "mechrevo";
   networking.networkmanager.enable = true;
 
