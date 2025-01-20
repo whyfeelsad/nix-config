@@ -17,41 +17,47 @@
     };
 
     daeuniverse.url = "github:daeuniverse/flake.nix";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = inputs @ {
-    nixpkgs,
-    disko,
-    impermanence,
-    home-manager,
-    daeuniverse,
-    ...
-  }: let
-    myvars = import ./vars;
-  in {
-    nixosConfigurations = {
-      mechrevo = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {
-          inherit myvars;
+  outputs =
+    inputs@{
+      nixpkgs,
+      disko,
+      impermanence,
+      home-manager,
+      daeuniverse,
+      nix-flatpak,
+      ...
+    }:
+    let
+      myvars = import ./vars;
+    in
+    {
+      nixosConfigurations = {
+        mechrevo = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit myvars;
+          };
+          modules = [
+            ./hosts/mechrevo
+            disko.nixosModules.disko
+            impermanence.nixosModules.impermanence
+            inputs.daeuniverse.nixosModules.daed
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs.flake-inputs = inputs;
+              home-manager.extraSpecialArgs = {
+                inherit myvars;
+              };
+              home-manager.users.aaron = import ./modules/home;
+            }
+          ];
         };
-        modules = [
-          ./hosts/mechrevo
-          disko.nixosModules.disko
-          impermanence.nixosModules.impermanence
-          inputs.daeuniverse.nixosModules.daed
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.flake-inputs = inputs;
-            home-manager.extraSpecialArgs = {
-              inherit myvars;
-            };
-            home-manager.users.aaron = import ./modules/home;
-          }
-        ];
       };
     };
-  };
 }

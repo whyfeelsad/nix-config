@@ -1,4 +1,5 @@
-{myvars, ...}: {
+{ myvars, ... }:
+{
   environment.persistence."/persistent" = {
     hideMounts = true;
     directories = [
@@ -9,7 +10,7 @@
       "/var/log"
       "/var/lib"
     ];
-    files = [];
+    files = [ ];
 
     users."${myvars.userName}" = {
       directories = [
@@ -40,6 +41,9 @@
         ".npm"
         ".java"
 
+        ".local/share/flatpak"
+        ".var/app"
+
         # JetBrains
         ".config/JetBrains"
         ".cache/JetBrains"
@@ -52,7 +56,7 @@
 
         ".mozilla"
       ];
-      files = [];
+      files = [ ];
     };
   };
 }
