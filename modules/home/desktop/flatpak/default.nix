@@ -13,6 +13,7 @@
       };
       packages = [
         "com.usebottles.bottles"
+        "app.zen_browser.zen"
       ];
     };
   };
