@@ -17,7 +17,6 @@ in {
   home.packages = with pkgs; [
     (pkgs.jetbrains.idea-ultimate.override {
       vmopts = vmoptions;
-      jdk = jetbrains.jdk;
     })
   ];
 }
