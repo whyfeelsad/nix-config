@@ -48,6 +48,8 @@
 
         # Vscode
         ".config/Code"
+
+        ".config/lingma"
       ];
       files = [];
     };
