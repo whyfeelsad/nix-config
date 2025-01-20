@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   xdg.configFile."niri/config.kdl".source = ./config.kdl;
 
   home.packages = with pkgs; [
@@ -9,7 +10,6 @@
     firefox
     remmina
 
-    xfce.thunar
     xwayland-satellite
   ];
 }

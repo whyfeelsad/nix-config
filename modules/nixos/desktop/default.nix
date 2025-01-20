@@ -2,7 +2,7 @@
   imports = [
     ./fonts
     ./fcitx
-
+    ./thunar
     ./xdg-portal
 
     ./displaymanager/greetd
