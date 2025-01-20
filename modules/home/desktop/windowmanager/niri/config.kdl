@@ -38,8 +38,13 @@ input {
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
+output "HDMI-A-1" {
+    mode "2560x1080@74.991"
+    scale 1
+}
+
 output "eDP-1" {
-    mode "2880x1880@120.000"
+    mode "2880x1800@120.000"
     scale 1.7
 }
 
@@ -180,10 +185,8 @@ binds {
     Mod+Ctrl+1 { move-column-to-workspace 1; }
     Mod+Ctrl+2 { move-column-to-workspace 2; }
     Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+4 { move-colum          location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
+n-to-workspace 7; }
     Mod+Ctrl+8 { move-column-to-workspace 8; }
     Mod+Ctrl+9 { move-column-to-workspace 9; }
 
