@@ -49,6 +49,8 @@
         ".config/Code"
 
         ".config/lingma"
+
+        ".mozilla"
       ];
       files = [];
     };
