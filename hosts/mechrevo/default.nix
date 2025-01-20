@@ -23,7 +23,5 @@
 
   services.flatpak.enable = true;
 
-  programs.steam.enable = true;
-
   system.stateVersion = "${myvars.stateVersion}";
 }

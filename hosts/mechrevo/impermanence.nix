@@ -55,8 +55,6 @@
         ".config/lingma"
 
         ".mozilla"
-
-        ".steam"
       ];
       files = [ ];
     };
