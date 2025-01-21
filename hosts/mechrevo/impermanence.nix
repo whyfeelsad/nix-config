@@ -55,6 +55,10 @@
         ".config/lingma"
 
         ".mozilla"
+
+        # Wakatime
+        ".wakatime"
+        ".wakatime.cfg"
       ];
       files = [ ];
     };
