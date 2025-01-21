@@ -58,9 +58,8 @@
 
         # Wakatime
         ".wakatime"
-        ".wakatime.cfg"
       ];
-      files = [ ];
+      files = [ ".wakatime.cfg" ];
     };
   };
 }
