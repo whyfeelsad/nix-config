@@ -18,6 +18,7 @@
     ./desktop/displaymanager/swaylock
     ./desktop/windowmanager/niri
     ./desktop/windowmanager/waybar
+    ./desktop/windowmanager/cursor
   ];
 
   home = {
