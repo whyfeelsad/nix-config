@@ -1,6 +1,7 @@
 {
   userName = "aaron";
-  defaultTimeZone = "Asia/Singapore";
+  fullName = "Aaron";
+  timeZone = "Asia/Singapore";
   stateVersion = "25.05";
 
   gitEmail = "the.sad@niceboy.org";

@@ -1,16 +1,15 @@
-{ myvars, ... }:
-{
+{myvars, ...}: {
   environment.persistence."/persistent" = {
     hideMounts = true;
     directories = [
-      "/etc/NetworkManager/system-connections"
-      "/etc/nixos"
       "/etc/ssh"
+      "/etc/nixos"
+      "/etc/NetworkManager/system-connections"
 
       "/var/log"
       "/var/lib"
     ];
-    files = [ ];
+    files = [];
 
     users."${myvars.userName}" = {
       directories = [
@@ -33,33 +32,39 @@
           mode = "0700";
         }
 
+        ".config/fcitx5"
+        ".local/share/atuin"
+        ".local/share/fcitx5"
         ".local/share/fish"
         ".local/share/materialgram"
+        ".local/share/zoxide"
 
-        ".config/fcitx5"
+        ".local/share/keyrings"
 
-        ".npm"
-        ".java"
+        ".mozilla"
+        ".cache/mozilla"
+        ".wakatime"
 
-        ".local/share/flatpak"
-        ".var/app"
+        ".config/Bitwarden"
+        ".cache/com.bitwarden.desktop"
+
+        # Vscode
+        ".config/Code"
+
+        ".lingma"
 
         # JetBrains
         ".config/JetBrains"
         ".cache/JetBrains"
         ".local/share/JetBrains"
 
-        # Vscode
-        ".config/Code"
+        ".npm"
+        ".java"
 
-        ".config/lingma"
-
-        ".mozilla"
-
-        # Wakatime
-        ".wakatime"
+        ".local/share/flatpak"
+        ".var/app"
       ];
-      files = [ ".wakatime.cfg" ];
+      files = [".wakatime.cfg"];
     };
   };
 }

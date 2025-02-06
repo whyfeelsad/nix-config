@@ -1,31 +1,21 @@
 {
-  config,
   lib,
   pkgs,
   myvars,
+  config,
   ...
-}:
-{
+}: {
   imports = [
-    ./zram.nix
     ./hardware.nix
     ./impermanence.nix
 
-    ../../modules/nixos/base
-    ../../modules/nixos/desktop
-
-    ../../modules/nixos/services/daed
-    ../../modules/nixos/services/virt-manager
-  ];
-
-  environment.systemPackages = [
-    pkgs.ddcutil
+    ../../modules/base
+    ../../modules/desktop
+    ../../modules/services/daed
   ];
 
   networking.hostName = "mechrevo";
   networking.networkmanager.enable = true;
-
-  services.flatpak.enable = true;
 
   system.stateVersion = "${myvars.stateVersion}";
 }
