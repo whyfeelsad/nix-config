@@ -21,5 +21,7 @@
     xwayland-satellite
 
     xfce.thunar
+
+    ollama
   ];
 }

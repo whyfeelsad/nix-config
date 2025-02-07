@@ -12,7 +12,8 @@
     ../../modules/base
     ../../modules/desktop
     ../../modules/services/daed
-    ../../modules/services/podman
+#    ../../modules/services/podman
+    ../../modules/services/docker
     ../../modules/services/virt-manager
   ];
 
