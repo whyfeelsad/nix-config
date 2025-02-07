@@ -17,14 +17,11 @@
     };
 
     daeuniverse.url = "github:daeuniverse/flake.nix";
-
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
   outputs = inputs @ {
     disko,
     nixpkgs,
-    nix-flatpak,
     daeuniverse,
     impermanence,
     home-manager,
@@ -45,7 +42,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs.flake-inputs = inputs;
+            #            home-manager.extraSpecialArgs.flake-inputs = inputs;
             home-manager.extraSpecialArgs = {inherit myvars;};
             home-manager.users.aaron = import ./home;
           }

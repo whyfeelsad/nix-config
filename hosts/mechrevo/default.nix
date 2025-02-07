@@ -12,6 +12,8 @@
     ../../modules/base
     ../../modules/desktop
     ../../modules/services/daed
+    ../../modules/services/podman
+    ../../modules/services/virt-manager
   ];
 
   networking.hostName = "mechrevo";

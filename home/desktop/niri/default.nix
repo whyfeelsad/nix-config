@@ -19,5 +19,7 @@
     plex-desktop
     wakatime-cli
     xwayland-satellite
+
+    xfce.thunar
   ];
 }

@@ -60,9 +60,6 @@
 
         ".npm"
         ".java"
-
-        ".local/share/flatpak"
-        ".var/app"
       ];
       files = [".wakatime.cfg"];
     };
