@@ -22,8 +22,8 @@
 
   modules = {
     incus.enable = true;
-    disko-luks-btrfs = true;
     preservation.enable = true;
+    disko-luks-btrfs.enable = true;
   };
 
   system.stateVersion = "${myvars.stateVersion}";
