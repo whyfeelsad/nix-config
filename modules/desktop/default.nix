@@ -1,6 +1,6 @@
 {
   imports = [
-    ./fcitx
+    ./fcitx5
     ./fonts
     ./greetd
     ./hardware

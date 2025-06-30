@@ -1,9 +1,8 @@
-{
+{pkgs, ...}: {
   imports = [
     ./cursor
-    ./niri
-    ./swaylock
     ./terminal
+    ./packages
     ./waybar
   ];
 }

@@ -1,21 +1,23 @@
 {
-  config,
-  pkgs,
   lib,
+  pkgs,
   myvars,
+  config,
   ...
-}: {
+}: let
+  userName = myvars.userName;
+  stateVersion = myvars.stateVersion;
+in {
   imports = [
-    ./base
+    ./apps
     ./desktop
-    ./dev
-    ./editors
+    ./packages
   ];
 
   home = {
-    username = "${myvars.userName}";
-    homeDirectory = "/home/${myvars.userName}";
-    stateVersion = "${myvars.stateVersion}";
+    username = "${userName}";
+    homeDirectory = "/home/${userName}";
+    stateVersion = "${stateVersion}";
   };
 
   programs.home-manager.enable = true;

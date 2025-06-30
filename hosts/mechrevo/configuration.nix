@@ -6,19 +6,25 @@
   ...
 }: {
   imports = [
-    ./hardware.nix
-    ./impermanence.nix
-
-    ../../modules/base
-    ../../modules/desktop
-    ../../modules/services/daed
-#    ../../modules/services/podman
-    ../../modules/services/docker
-    ../../modules/services/virt-manager
+    ../../modules
+    ./hardware-configuration.nix
   ];
 
-  networking.hostName = "mechrevo";
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "mechrevo";
+    networkmanager.enable = true;
+  };
+
+  services.dae = {
+    enable = true;
+    configFile = "/home/aaron/.config/dae/config.dae";
+  };
+
+  modules = {
+    incus.enable = true;
+    disko-luks-btrfs = true;
+    preservation.enable = true;
+  };
 
   system.stateVersion = "${myvars.stateVersion}";
 }

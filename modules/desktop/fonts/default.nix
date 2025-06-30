@@ -18,7 +18,7 @@
       nerd-fonts.fira-code
       nerd-fonts.symbols-only
       nerd-fonts.jetbrains-mono
-      maple-mono-NF
+      maple-mono.NF-CN-unhinted
 
       # chinese fonts
       source-sans

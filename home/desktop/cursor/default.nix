@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.pointerCursor = {
-    name = "phinger-cursors-light";
-    package = pkgs.phinger-cursors;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 32;
     gtk.enable = true;
   };

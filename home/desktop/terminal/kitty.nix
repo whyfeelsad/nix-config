@@ -5,7 +5,7 @@
       themeFile = "everforest_dark_hard";
 
       font = {
-        name = "Maple Mono NF";
+        name = "Maple Mono NF CN";
         size = 10;
       };
 

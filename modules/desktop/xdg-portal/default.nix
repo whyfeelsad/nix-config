@@ -1,3 +1,6 @@
+# Reference:
+# https://nixos.wiki/wiki/Sway
+# https://search.nixos.org/options?channel=unstable&show=xdg.portal
 {pkgs, ...}: {
   services.dbus = {
     enable = true;

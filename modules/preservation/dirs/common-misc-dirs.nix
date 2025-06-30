@@ -1,0 +1,5 @@
+[
+  # misc
+  # ".mozilla"
+  # ".wakatime"
+]
