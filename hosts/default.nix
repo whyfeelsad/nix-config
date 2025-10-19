@@ -1,4 +1,5 @@
-inputs: let
+inputs:
+let
   myvars = import ../vars;
 
   hmModules = [
@@ -7,23 +8,24 @@ inputs: let
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        extraSpecialArgs = {inherit myvars;};
+        extraSpecialArgs = { inherit inputs myvars; };
         users.aaron = import ../home;
       };
     }
   ];
 
-  mkSystem = host:
+  mkSystem =
+    host:
     inputs.nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs myvars;};
-      modules =
-        [
-          ./${host}/configuration.nix
-        ]
-        ++ hmModules;
+      specialArgs = { inherit inputs myvars; };
+      modules = [
+        ./${host}/configuration.nix
+      ]
+      ++ hmModules;
     };
-in {
+in
+{
   nixosConfigurations = {
     mechrevo = mkSystem "mechrevo";
   };

@@ -7,7 +7,6 @@
     # synchronisation of your history between machines, via an Atuin server.
     atuin = {
       enable = true;
-      package = inputs.atuin.packages.${pkgs.system}.default;
       enableBashIntegration = true;
       enableFishIntegration = true;
       daemon.enable = true;

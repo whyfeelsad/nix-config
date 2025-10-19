@@ -9,7 +9,8 @@
 
     preservation.url = "github:nix-community/preservation";
 
-    atuin.url = "github:atuinsh/atuin";
+    home-manager.url = "github:nix-community/home-manager";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs: import ./hosts inputs;
