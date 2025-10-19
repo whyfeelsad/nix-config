@@ -2,27 +2,14 @@
   description = "Aaron's NixOS flake";
 
   inputs = {
-    nixpkgs = {
-      url = "github:NixOS/nixpkgs/nixos-unstable-small";
-    };
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    disko.url = "github:nix-community/disko";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
 
-    preservation = {
-      url = "github:nix-community/preservation";
-    };
+    preservation.url = "github:nix-community/preservation";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri = {
-      url = "github:sodiboo/niri-flake";
-    };
+    atuin.url = "github:atuinsh/atuin";
   };
 
   outputs = inputs: import ./hosts inputs;
