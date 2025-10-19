@@ -1,6 +1,7 @@
 {
   imports = [
     ./common
+    ./desktop
     ./services
   ];
 }

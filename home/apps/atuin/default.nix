@@ -1,4 +1,3 @@
-{ inputs, pkgs, ... }:
 {
   programs = {
     # Atuin replaces your existing shell history with a SQLite database,
