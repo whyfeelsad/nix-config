@@ -9,6 +9,7 @@ in
 {
   imports = [
     ./apps
+    ./desktop
     ./packages
   ];
 
