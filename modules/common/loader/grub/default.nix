@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   boot.loader.grub = {
     enable = lib.mkDefault false;
     default = lib.mkDefault "saved";

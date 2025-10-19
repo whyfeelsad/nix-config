@@ -3,11 +3,13 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   cfg = config.modules.docker;
   myvars = import ../../../vars;
   userName = myvars.userName;
-in {
+in
+{
   options.modules.docker = {
     enable = lib.mkEnableOption "Enable Docker service";
   };
@@ -35,6 +37,6 @@ in {
       lazydocker # Docker terminal UI.
     ];
 
-    users.users.${userName}.extraGroups = ["docker"];
+    users.users.${userName}.extraGroups = [ "docker" ];
   };
 }

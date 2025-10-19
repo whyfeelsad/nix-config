@@ -3,11 +3,13 @@
   pkgs,
   config,
   ...
-}: let
+}:
+let
   cfg = config.modules.podman;
   myvars = import ../../../vars;
   userName = myvars.userName;
-in {
+in
+{
   options.modules.podman = {
     enable = lib.mkEnableOption "Enable Podman service";
   };
@@ -31,7 +33,7 @@ in {
         autoPrune = {
           enable = true;
           dates = "weekly";
-          flags = ["--all"];
+          flags = [ "--all" ];
         };
       };
 
@@ -40,6 +42,6 @@ in {
       };
     };
 
-    users.users.${userName}.extraGroups = ["podman"];
+    users.users.${userName}.extraGroups = [ "podman" ];
   };
 }

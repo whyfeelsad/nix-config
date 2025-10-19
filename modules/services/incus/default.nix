@@ -2,11 +2,13 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.modules.incus;
   myvars = import ../../../vars;
   userName = myvars.userName;
-in {
+in
+{
   options.modules.incus = {
     enable = lib.mkEnableOption "Enable Incus service";
   };
@@ -57,10 +59,16 @@ in {
     };
 
     networking.firewall.interfaces.incusbr0 = {
-      allowedTCPPorts = [53 67];
-      allowedUDPPorts = [53 67];
+      allowedTCPPorts = [
+        53
+        67
+      ];
+      allowedUDPPorts = [
+        53
+        67
+      ];
     };
 
-    users.users.${userName}.extraGroups = ["incus-admin"];
+    users.users.${userName}.extraGroups = [ "incus-admin" ];
   };
 }

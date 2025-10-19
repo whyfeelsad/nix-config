@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   nix = {
     # remove nix-channel related tools & configs, we use flakes instead.
     channel.enable = false;
@@ -24,10 +25,13 @@
 
       # Enable flakes permanently in NixOS
       # https://nixos.wiki/wiki/Flakes
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
 
-      substituters = ["https://cache.garnix.io"];
-      trusted-public-keys = ["cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="];
+      substituters = [ "https://cache.garnix.io" ];
+      trusted-public-keys = [ "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=" ];
     };
   };
 

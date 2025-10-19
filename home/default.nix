@@ -1,16 +1,14 @@
 {
-  lib,
-  pkgs,
   myvars,
-  config,
   ...
-}: let
+}:
+let
   userName = myvars.userName;
   stateVersion = myvars.stateVersion;
-in {
+in
+{
   imports = [
     ./apps
-    ./desktop
     ./packages
   ];
 

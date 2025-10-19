@@ -1,7 +1,8 @@
 # Reference: https://nixos.wiki/wiki/Sudo
 let
   swBin = "/run/current-system/sw/bin";
-in {
+in
+{
   security.sudo = {
     enable = true;
     extraRules = [
@@ -9,18 +10,18 @@ in {
         commands = [
           {
             command = "${swBin}/nix";
-            options = ["NOPASSWD"];
+            options = [ "NOPASSWD" ];
           }
           {
             command = "${swBin}/nixos-rebuild";
-            options = ["NOPASSWD"];
+            options = [ "NOPASSWD" ];
           }
           {
             command = "${swBin}/nix-collect-garbage";
-            options = ["NOPASSWD"];
+            options = [ "NOPASSWD" ];
           }
         ];
-        groups = ["wheel"];
+        groups = [ "wheel" ];
       }
     ];
   };

@@ -9,6 +9,7 @@
     ./firewall
     ./packages
     ./monitoring
+    ./preservation
   ];
 
   documentation.nixos.enable = false;

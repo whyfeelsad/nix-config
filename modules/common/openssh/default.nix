@@ -2,7 +2,7 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    ports = [233];
+    ports = [ 233 ];
     settings = {
       # root user is used for remote deployment, so we need to allow it
       PermitRootLogin = "prohibit-password";
