@@ -1,8 +1,4 @@
-{
-  inputs,
-  device ? throw "Set this to your disk device, e.g. /dev/nvme0n1",
-  ...
-}:
+{ inputs, ... }:
 {
   imports = [
     inputs.disko.nixosModules.disko
@@ -26,7 +22,7 @@
     disk = {
       nvme = {
         type = "disk";
-        inherit device;
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {

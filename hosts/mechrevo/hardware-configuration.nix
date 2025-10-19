@@ -7,8 +7,8 @@
 }:
 {
   imports = [
+    ./disko-fs.nix
     (modulesPath + "/installer/scan/not-detected.nix")
-    (import ./disko-fs.nix { device = "/dev/nvme0n1"; })
   ];
 
   boot = {
