@@ -1,4 +1,0 @@
-[
-  # common home files
-  ".viminfo"
-]
