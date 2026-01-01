@@ -7,18 +7,19 @@ let
         name: type:
         let
           path = dir + "/${name}";
-          isNixDir = type == "directory" && builtins.pathExists (path + "/default.nix");
+          isNixDir = builtins.pathExists (path + "/default.nix");
+          isNixFile = type == "regular" && lib.hasSuffix ".nix" name;
         in
-        if isNixDir then
-          [ (path + "/default.nix") ]
-        else if type == "directory" then
-          listModules path
+        if type == "directory" then
+          if isNixDir then path else listModules path
         else
-          [ ]
+          lib.optional isNixFile path
       ))
       lib.flatten
     ];
 in
 {
-  imports = (listModules ./core) ++ (listModules ./server) ++ (listModules ./desktop);
+  default = {
+    imports = (listModules ./core) ++ (listModules ./server);
+  };
 }

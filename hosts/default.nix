@@ -1,18 +1,27 @@
-{ inputs, ... }:
+{
+  self,
+  inputs,
+  lib,
+  ...
+}:
 let
-  mkSystem =
-    host:
-    inputs.nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+  mkNixosSystem = host: _: {
+    ${host} = lib.nixosSystem {
       specialArgs = { inherit inputs; };
       modules = [
-        ../modules
+        {
+          core' = {
+            userName = "aaron";
+            hostName = host;
+          };
+        }
+        self.nixosModules.default
         ./${host}
       ];
     };
-in
-{
-  nixosConfigurations = {
-    mechrevo = mkSystem "mechrevo";
   };
-}
+in
+lib.pipe (builtins.readDir ./.) [
+  (lib.filterAttrs (n: _: n != "default.nix"))
+  (lib.concatMapAttrs mkNixosSystem)
+]
