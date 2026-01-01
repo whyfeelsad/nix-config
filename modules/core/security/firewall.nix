@@ -2,11 +2,9 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.security'.firewall;
-in
-{
+in {
   options.security'.firewall = {
     enable = lib.mkEnableOption "Enable the firewall";
   };

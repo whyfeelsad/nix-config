@@ -18,5 +18,5 @@
     };
   };
 
-  preservation'.user.directories = [ ".local/share/atuin" ];
+  preservation'.user.directories = [".local/share/atuin"];
 }

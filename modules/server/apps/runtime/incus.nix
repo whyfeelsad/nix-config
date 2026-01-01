@@ -2,12 +2,10 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.services'.incus;
   user = config.core'.userName;
-in
-{
+in {
   options.services'.incus = {
     enable = lib.mkEnableOption "Enable Incus service";
   };
@@ -68,7 +66,7 @@ in
       ];
     };
 
-    users.users.${user}.extraGroups = [ "incus-admin" ];
+    users.users.${user}.extraGroups = ["incus-admin"];
 
     boot.kernel.sysctl = {
       "net.ipv4.ip_forward" = 1;

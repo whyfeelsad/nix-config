@@ -2,11 +2,9 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.services'.caddy;
-in
-{
+in {
   options.services'.caddy = {
     enable = lib.mkEnableOption "Enable Caddy web server";
   };
@@ -35,7 +33,7 @@ in
         80
         443
       ];
-      allowedUDPPorts = [ 443 ];
+      allowedUDPPorts = [443];
     };
 
     preservation'.os.directories = [

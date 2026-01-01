@@ -3,11 +3,10 @@
   inputs,
   lib,
   ...
-}:
-let
+}: let
   mkNixosSystem = host: _: {
     ${host} = lib.nixosSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {inherit inputs;};
       modules = [
         {
           core' = {
@@ -21,7 +20,7 @@ let
     };
   };
 in
-lib.pipe (builtins.readDir ./.) [
-  (lib.filterAttrs (n: _: n != "default.nix"))
-  (lib.concatMapAttrs mkNixosSystem)
-]
+  lib.pipe (builtins.readDir ./.) [
+    (lib.filterAttrs (n: _: n != "default.nix"))
+    (lib.concatMapAttrs mkNixosSystem)
+  ]

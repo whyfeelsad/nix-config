@@ -2,11 +2,9 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.services'.forgejo;
-in
-{
+in {
   options.services'.forgejo = {
     enable = lib.mkEnableOption "Enable Forgejo service";
 
@@ -26,7 +24,7 @@ in
       isSystemUser = true;
     };
 
-    users.groups.forgejo = { };
+    users.groups.forgejo = {};
 
     services.openssh.extraConfig = ''
       Match User git
@@ -100,14 +98,14 @@ in
     # https://discourse.nixos.org/t/how-do-i-set-process-capabilities/4368/4
     systemd.services.forgejo = {
       serviceConfig = {
-        AmbientCapabilities = lib.mkForce [ "CAP_NET_BIND_SERVICE" ];
+        AmbientCapabilities = lib.mkForce ["CAP_NET_BIND_SERVICE"];
         CapabilityBoundingSet = lib.mkForce "CAP_NET_BIND_SERVICE";
         PrivateUsers = lib.mkForce false;
       };
     };
 
     services.postgresql = {
-      ensureDatabases = [ "forgejo" ];
+      ensureDatabases = ["forgejo"];
       ensureUsers = [
         {
           name = "forgejo";
@@ -126,7 +124,7 @@ in
       };
     };
 
-    networking.firewall.allowedTCPPorts = [ 22 ];
+    networking.firewall.allowedTCPPorts = [22];
 
     preservation'.os.directories = [
       "/var/lib/forgejo"

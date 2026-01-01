@@ -3,18 +3,17 @@
   inputs,
   config,
   ...
-}:
-let
+}: let
   user = config.core'.userName;
-in
-{
+in {
   imports = [
     inputs.preservation.nixosModules.default
 
-    (lib.mkAliasOptionModule [ "preservation'" "os" ] [ "preservation" "preserveAt" "/persistent" ])
-    (lib.mkAliasOptionModule
-      [ "preservation'" "user" ]
-      [ "preservation" "preserveAt" "/persistent" "users" user ]
+    (lib.mkAliasOptionModule ["preservation'" "os"] ["preservation" "preserveAt" "/persistent"])
+    (
+      lib.mkAliasOptionModule
+      ["preservation'" "user"]
+      ["preservation" "preserveAt" "/persistent" "users" user]
     )
   ];
 
@@ -69,7 +68,7 @@ in
   # in this specific setup for a persistent machine-id so we disable it
   #
   # see the firstboot example below for an alternative approach
-  systemd.suppressedSystemUnits = [ "systemd-machine-id-commit.service" ];
+  systemd.suppressedSystemUnits = ["systemd-machine-id-commit.service"];
 
   # let the service commit the transient ID to the persistent volume
   systemd.services.systemd-machine-id-commit = {

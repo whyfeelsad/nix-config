@@ -19,17 +19,14 @@
     nur-aaron.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      ...
-    }:
-    let
-      inherit (nixpkgs) lib;
-    in
-    {
-      nixosModules = import ./modules { inherit lib; };
-      nixosConfigurations = import ./hosts { inherit self inputs lib; };
-    };
+  outputs = inputs @ {
+    self,
+    nixpkgs,
+    ...
+  }: let
+    inherit (nixpkgs) lib;
+  in {
+    nixosModules = import ./modules {inherit lib;};
+    nixosConfigurations = import ./hosts {inherit self inputs lib;};
+  };
 }

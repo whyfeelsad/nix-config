@@ -2,11 +2,9 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.boot'.grub;
-in
-{
+in {
   options.boot'.grub = {
     enable = lib.mkEnableOption "Enable GRUB bootloader";
   };

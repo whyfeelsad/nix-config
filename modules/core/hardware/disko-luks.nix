@@ -3,11 +3,9 @@
   inputs,
   config,
   ...
-}:
-let
+}: let
   cfg = config.hardware'.disko-luks;
-in
-{
+in {
   imports = [inputs.disko.nixosModules.disko];
 
   options.hardware'.disko-luks = {

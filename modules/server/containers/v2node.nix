@@ -2,12 +2,10 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.containers'.v2node;
   port = 28256;
-in
-{
+in {
   options.containers'.v2node = {
     enable = lib.mkEnableOption "";
   };
@@ -22,7 +20,7 @@ in
         hostname = "v2node";
         serviceName = "v2node";
         image = "ghcr.io/wyx2685/v2node:v0.2.4";
-        ports = [ "${toString port}:${toString port}" ];
+        ports = ["${toString port}:${toString port}"];
         volumes = [
           "/var/lib/v2node:/etc/v2node"
         ];
@@ -37,8 +35,8 @@ in
     ];
 
     networking.firewall = {
-      allowedTCPPorts = [ port ];
-      allowedUDPPorts = [ port ];
+      allowedTCPPorts = [port];
+      allowedUDPPorts = [port];
     };
   };
 }

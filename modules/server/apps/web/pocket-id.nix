@@ -2,12 +2,10 @@
   lib,
   config,
   ...
-}:
-let
+}: let
   cfg = config.services'.pocket-id;
   inherit (config.services.pocket-id) user;
-in
-{
+in {
   options.services'.pocket-id = {
     enable = lib.mkEnableOption "Enable pocket-id server";
 
@@ -47,7 +45,7 @@ in
     };
 
     services.postgresql = {
-      ensureDatabases = [ user ];
+      ensureDatabases = [user];
       ensureUsers = [
         {
           name = user;
