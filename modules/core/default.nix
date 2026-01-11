@@ -29,6 +29,8 @@ in {
   };
 
   config = {
+    system.primaryUser = cfg.userName;
+
     networking.hostName = cfg.hostName;
     networking.computerName = cfg.hostName;
     system.defaults.smb.NetBIOSName = cfg.hostName;
