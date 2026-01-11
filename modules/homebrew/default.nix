@@ -58,6 +58,7 @@
 
       # 媒体播放 (Media)
       "iina"
+      "neteasemusic"
 
       # 字体 (Fonts)
       "font-lxgw-wenkai"
