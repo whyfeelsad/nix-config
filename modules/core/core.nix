@@ -21,6 +21,11 @@ in
       type = lib.types.str;
       description = "Network hostname";
     };
+    timeZone = lib.mkOption {
+      type = lib.types.str;
+      default = "Asia/Singapore";
+      description = "System timezone";
+    };
     stateVersion = lib.mkOption {
       type = lib.types.str;
       default = "26.05";
