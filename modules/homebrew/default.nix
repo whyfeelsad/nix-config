@@ -19,6 +19,7 @@
 
     # `brew install`
     brews = [
+      "mole"
       "opencode"
     ];
 
