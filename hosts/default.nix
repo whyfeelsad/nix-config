@@ -1,7 +1,8 @@
 {
+  lib,
   self,
   inputs,
-  lib,
+  ...
 }:
 let
   inherit (inputs) nix-darwin;
