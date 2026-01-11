@@ -2,8 +2,7 @@
   hm'.programs = {
     atuin = {
       enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = false;
+      enableZshIntegration = true;
       daemon.enable = true;
       settings = {
         sync_frequency = 0;
@@ -17,6 +16,4 @@
       };
     };
   };
-
-  preservation'.user.directories = [".local/share/atuin"];
 }

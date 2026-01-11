@@ -1,22 +1,17 @@
 {
-  description = "Aaron's NixOS flake";
+  description = "Aaron's macOS flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    disko.url = "github:nix-community/disko";
-    disko.inputs.nixpkgs.follows = "nixpkgs";
-
-    preservation.url = "github:nix-community/preservation";
+    nix-darwin.url = "github:nix-darwin/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    nur-aaron.url = "git+https://codeberg.org/niceboy/nur-packages.git";
-    nur-aaron.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs @ {
@@ -26,7 +21,7 @@
   }: let
     inherit (nixpkgs) lib;
   in {
-    nixosModules = import ./modules {inherit lib;};
-    nixosConfigurations = import ./hosts {inherit self inputs lib;};
+    darwinModules = import ./modules {inherit lib inputs;};
+    darwinConfigurations = import ./hosts {inherit self inputs lib;};
   };
 }

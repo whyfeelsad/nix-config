@@ -2,11 +2,11 @@
   self,
   inputs,
   lib,
-  ...
 }: let
-  mkNixosSystem = host: _: {
-    ${host} = lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+  inherit (inputs) nix-darwin;
+  mkDarwinSystem = host: _: {
+    ${host} = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit self inputs;};
       modules = [
         {
           core' = {
@@ -14,7 +14,7 @@
             hostName = host;
           };
         }
-        self.nixosModules.default
+        self.darwinModules.default
         ./${host}
       ];
     };
@@ -22,5 +22,5 @@
 in
   lib.pipe (builtins.readDir ./.) [
     (lib.filterAttrs (n: _: n != "default.nix"))
-    (lib.concatMapAttrs mkNixosSystem)
+    (lib.concatMapAttrs mkDarwinSystem)
   ]
