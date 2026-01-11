@@ -8,7 +8,6 @@
 #    https://github.com/yannbertrand/macos-defaults
 #
 ###################################################################################
-
 { config, ... }:
 {
   # Set your time zone.

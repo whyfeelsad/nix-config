@@ -1,7 +1,8 @@
-{ inputs
-, config
-, lib
-, ...
+{
+  inputs,
+  config,
+  lib,
+  ...
 }:
 let
   cfg = config.core';
@@ -31,7 +32,6 @@ in
       default = "26.05";
       description = "NixOS state version";
     };
-
   };
 
   config = {

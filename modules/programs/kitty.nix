@@ -1,4 +1,3 @@
-{ config, ... }:
 {
   hm'.programs.kitty = {
     enable = true;
@@ -28,7 +27,6 @@
       cursor_blink_interval = "0";
       # detect_urls no
       mouse_hide_wait = "1";
-
     };
   };
 }

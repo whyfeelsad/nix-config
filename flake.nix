@@ -15,15 +15,20 @@
   };
 
   outputs =
-    inputs @ { self
-    , nixpkgs
-    , ...
+    inputs@{
+      self,
+      nixpkgs,
+      ...
     }:
     let
       inherit (nixpkgs) lib;
+      forEachSystem = lib.genAttrs lib.systems.flakeExposed;
     in
     {
       darwinModules = import ./modules { inherit lib inputs; };
       darwinConfigurations = import ./hosts { inherit self inputs lib; };
+
+      # nix code formatter
+      formatter = forEachSystem (system: nixpkgs.legacyPackages.${system}.nixfmt-tree);
     };
 }

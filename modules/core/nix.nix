@@ -1,8 +1,9 @@
-{ pkgs
-, lib
-, config
-, ...
-}: {
+{
+  pkgs,
+  lib,
+  ...
+}:
+{
   environment.systemPackages = with pkgs; [
     comma
     deadnix
@@ -10,7 +11,6 @@
     nixd
     nix-index
     nix-output-monitor
-    nixpkgs-fmt
     nix-prefetch-git # get fetchgit hashes
     nix-prefetch-github
     nix-tree
