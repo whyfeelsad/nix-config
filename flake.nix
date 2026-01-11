@@ -14,14 +14,16 @@
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    ...
-  }: let
-    inherit (nixpkgs) lib;
-  in {
-    darwinModules = import ./modules {inherit lib inputs;};
-    darwinConfigurations = import ./hosts {inherit self inputs lib;};
-  };
+  outputs =
+    inputs @ { self
+    , nixpkgs
+    , ...
+    }:
+    let
+      inherit (nixpkgs) lib;
+    in
+    {
+      darwinModules = import ./modules { inherit lib inputs; };
+      darwinConfigurations = import ./hosts { inherit self inputs lib; };
+    };
 }

@@ -1,11 +1,8 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}: let
-  user = config.core'.userName;
-in {
+{ pkgs
+, lib
+, config
+, ...
+}: {
   environment.systemPackages = with pkgs; [
     comma
     deadnix

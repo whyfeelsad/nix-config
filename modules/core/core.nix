@@ -1,14 +1,15 @@
-{
-  inputs,
-  config,
-  lib,
-  ...
-}: let
+{ inputs
+, config
+, lib
+, ...
+}:
+let
   cfg = config.core';
-in {
+in
+{
   imports = [
     inputs.home-manager.darwinModules.home-manager
-    (lib.mkAliasOptionModule ["hm'"] ["home-manager" "users" cfg.userName])
+    (lib.mkAliasOptionModule [ "hm'" ] [ "home-manager" "users" cfg.userName ])
   ];
 
   options.core' = {

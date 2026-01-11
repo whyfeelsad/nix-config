@@ -1,12 +1,13 @@
-{
-  self,
-  inputs,
-  lib,
-}: let
+{ self
+, inputs
+, lib
+,
+}:
+let
   inherit (inputs) nix-darwin;
   mkDarwinSystem = host: _: {
     ${host} = nix-darwin.lib.darwinSystem {
-      specialArgs = {inherit self inputs;};
+      specialArgs = { inherit self inputs; };
       modules = [
         {
           core' = {
@@ -20,7 +21,7 @@
     };
   };
 in
-  lib.pipe (builtins.readDir ./.) [
-    (lib.filterAttrs (n: _: n != "default.nix"))
-    (lib.concatMapAttrs mkDarwinSystem)
-  ]
+lib.pipe (builtins.readDir ./.) [
+  (lib.filterAttrs (n: _: n != "default.nix"))
+  (lib.concatMapAttrs mkDarwinSystem)
+]
