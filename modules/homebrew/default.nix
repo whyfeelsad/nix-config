@@ -15,6 +15,7 @@
     masApps = {
       Bob = 1630034110;
       Wechat = 836500024;
+      ServerCat = 1501532023;
     };
 
     # `brew install`
@@ -25,17 +26,45 @@
 
     # `brew install --cask`
     casks = [
+      # 开发工具 & 终端 (Development)
+      "zed"
+      "termius"
+      "orbstack"
+      "lm-studio"
       "claude-code"
       "visual-studio-code"
-      "telegram"
-      "qspace-pro"
-      "surge"
+      "android-platform-tools"
 
-      "font-hack-nerd-font"
-      "font-jetbrains-mono-nerd-font"
-      "font-maple-mono-nf-cn"
-      "font-material-icons"
+      # 系统增强 & 效能 (Productivity)
+      "stats"
+      "raycast"
+      "qspace-pro"
+      "squirrel-app"
+      "monitorcontrol"
+      "macs-fan-control"
+      "input-source-pro"
+      "karabiner-elements"
+      "jordanbaird-ice@beta"
+
+      # 电池管理 (Battery)
+      "battery"
+      "battery-buddy"
+
+      # 网络与通讯 (Network)
+      "surge"
+      "telegram"
+      "brave-browser"
+      "google-chrome"
+
+      # 媒体播放 (Media)
+      "iina"
+
+      # 字体 (Fonts)
       "font-lxgw-wenkai"
+      "font-material-icons"
+      "font-hack-nerd-font"
+      "font-maple-mono-nf-cn"
+      "font-jetbrains-mono-nerd-font"
     ];
   };
 }
