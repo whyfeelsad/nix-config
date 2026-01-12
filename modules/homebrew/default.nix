@@ -14,7 +14,7 @@
     # For details, see https://github.com/mas-cli/mas
     masApps = {
       Bob = 1630034110;
-      Wechat = 836500024;
+      # Wechat = 836500024;
       ServerCat = 1501532023;
     };
 
@@ -30,7 +30,7 @@
       "zed"
       "termius"
       "orbstack"
-      "lm-studio"
+      # "lm-studio"
       "claude-code"
       "visual-studio-code"
       "android-platform-tools"
@@ -47,7 +47,7 @@
       "jordanbaird-ice@beta"
 
       # 电池管理 (Battery)
-      "battery"
+      # "battery"
       "battery-buddy"
 
       # 网络与通讯 (Network)
